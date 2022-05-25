@@ -38,9 +38,9 @@ function App() {
       edad: 6,
     },
   };
-  console.log('edad1 del humano ', humanExample.perfil.edad);
-  console.log('edad 2del humano ', humanExample2.perfil.edad);
-  console.log('suma ', humanExample.perfil.edad + humanExample2.perfil.edad);
+  //console.log('edad1 del humano ', humanExample.perfil.edad);
+  //console.log('edad 2del humano ', humanExample2.perfil.edad);
+  //console.log('suma ', humanExample.perfil.edad + humanExample2.perfil.edad);
   const arrayExamples = [
     { nombre: 'juan' },
     { apellido: 'perez' },
@@ -77,21 +77,85 @@ function App() {
   //FUNCIONES
 
   //TAREA 2 , CREO FUNCIÓN QUE RECIBE UN INDICE DEL ARRAY (POSICION DEL ELEMENTO) , RETORNAR EL PERFIL QUE SE ENCUENTRE EN ESA POSICIÓN DEL ARRAY
-  function agarrarPefil(indice) {
-    //codigo de la funcion
-    return ejemploSuma[indice];
-  }
 
   const cambiarValor = (e) => {
     e.preventDefault();
   };
 
   const ejemploSuma = [1, 2, 3, 4, 5, 6];
-  console.log(ejemploSuma[0] + ejemploSuma[1]);
+  //console.log(ejemploSuma[0] + ejemploSuma[1]);
 
   const ejemploArrayTarea = [{ nombre: 'toño' }];
-  console.log('ejemploArrayTarea :>> ', ejemploArrayTarea[0].nombre);
-  return <div className='App'>{agarrarPefil(4)}</div>;
+  //console.log('ejemploArrayTarea :>> ', ejemploArrayTarea[0].nombre);
+
+  // [  {} , {} , {} , {} ,{ }  ]
+  let estudiantes = [
+    {
+      id: 1,
+      nombre: 'Carlos Cardona',
+      correo: 'cacardona5@gmail.com',
+      perfil: { direccion: 'carrera 123', telefono: 4404035, sexo: 'masculino', edad: 1 },
+    }, //0
+    {
+      id: 2,
+      nombre: 'ANdres Chamorro',
+      correo: 'chamorro5@gmail.com',
+      perfil: { direccion: 'calle 123', telefono: 3335656, sexo: 'masculino', edad: 1 },
+    }, //1
+    {
+      id: 3,
+      nombre: 'Valentina Cardona',
+      correo: 'valentina@gmail.com',
+      perfil: { direccion: 'avenida 123', telefono: 3109999, sexo: 'femenino', edad: 1 },
+    }, //2
+    {
+      id: 4,
+      nombre: 'Fabian Chaguendo',
+      correo: 'chaguendo@gmail.com',
+      perfil: { direccion: 'diagonal 123', telefono: 1109090, sexo: 'masculino', edad: 10 },
+    }, //3
+    {
+      id: 5,
+      nombre: 'Socorro Gonzales',
+      correo: 'socorro@gmail.com',
+      perfil: { direccion: 'transversal 123', telefono: 6606060, sexo: 'masculino', edad: 1 },
+    }, //4
+  ];
+
+  function agarrarPefil(indice) {
+    //indice = 0
+    //codigo de la funcion
+    console.log(' estudiante 0 ', estudiantes[indice].perfil);
+    return estudiantes[indice].perfil;
+  }
+  // [ {carro 1} , {carro 2} , {carro3 }                     ]
+  const carros = [
+    {
+      marca: 'chevrolet',
+      precio: 4000,
+    },
+    {
+      marca: 'mazda',
+      precio: 2000,
+    },
+    {
+      marca: 'audi',
+      precio: 20000,
+    },
+  ];
+  return (
+    <div className='App'>
+      {carros.map(({ marca, precio }) => {
+        return (
+          <div>
+            <div>{marca}</div>
+          </div>
+        );
+      })}
+
+      <div>SEPARACIÓN</div>
+    </div>
+  );
 }
 
 export default App;
