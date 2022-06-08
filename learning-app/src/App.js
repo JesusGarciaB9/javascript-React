@@ -15,6 +15,7 @@ function App() {
       presidente: {
         name: 'pedro',
       },
+      fecha: new Date(),
       ciudades: [
         { id: 4, nombre: 'barranquila', latitud: 67.323, longitud: 65.333, poblacion: 2000000 },
         { id: 5, nombre: 'medellin', latitud: 69.3253, longitud: 95.333, poblacion: 3000000 },
@@ -45,54 +46,12 @@ function App() {
       ],
     }, //2
   ];
+  const hoy = new Date();
+  console.log('hoy ', hoy);
   return (
     <div className='App ' style={{ fontSize: '20px' }}>
-      {paises.map((pais) => {
-        return pais.name;
-      })}
-      <div>SEPARACIÓN</div>
-      {paises.map((pais) => {
-        return (
-          <>
-            {pais.name} - {pais.id} - {pais.size}
-          </>
-        );
-      })}
-      <div>SEPARACIÓN 2</div>
-      {paises.map((pais) => {
-        return (
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div>{pais.name}</div>
-            <div> {pais.id}</div>
-            <div>{pais.size}</div>
-          </div>
-        );
-      })}
-      <div>SEPARACIÓN 3</div>
-      {paises.map((pais) => {
-        return (
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div>{pais.name}</div>
-            <div> {pais.id}</div>
-            <div>{pais.size}</div>
-            <div>{pais.presidente.name}</div>
-          </div>
-        );
-      })}
-      <div>SEPARACIÓN 4</div>
-      {paises.map((pais) => {
-        return (
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div>{pais.name}</div>
-            <div> {pais.id}</div>
-            <div>{pais.size}</div>
-            <div>{pais.presidente.name}</div>
-            {pais.ciudades.map((ciudad) => {
-              return <div style={{ padding: '8px' }}>{ciudad.nombre}</div>;
-            })}
-          </div>
-        );
-      })}
+      hola
+      {hoy.toISOString()}
     </div>
   );
 }
